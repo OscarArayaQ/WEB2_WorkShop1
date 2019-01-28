@@ -1,0 +1,30 @@
+<html>
+	<head>
+	    <script>
+	        function mostrarPerro () {
+		        fetch('https://dog.ceo/api/breeds/image/random')
+		        	.then((respuesta) => {
+		            	return respuesta.json();
+		        	} ).then((respuesta) => {
+		            document.getElementById('direccion').innerHTML = respuesta.message; 
+		            document.getElementById('imagen').src =  respuesta.message;
+		        })
+	        }
+	    </script>
+	</head>
+
+	<body>
+		<div>
+	        <button onclick="mostrarPerro()">Actualizar</button>
+	    </div>
+
+	    <div>
+	        <h3 id="direccion"></h3>
+	    </div>
+
+	    <div>
+	        <img src="pic_trulli.jpg" id="imagen" alt="Italian Trulli">
+	    </div>
+	    
+	</body>
+</html>
