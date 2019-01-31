@@ -1,12 +1,14 @@
 <html>
 	<head>
+	
+		<--!-->script para obtener los datos de api a utlizar--</--!-->
 	    <script>
 	        function mostrarPerro () {
 		        fetch('https://dog.ceo/api/breeds/image/random')
 		        	.then((respuesta) => {
 		            	return respuesta.json();
 		        	} ).then((respuesta) => {
-		            document.getElementById('direccion').innerHTML = respuesta.message; 
+		           // document.getElementById('direccion').innerHTML = respuesta.message; 
 		            document.getElementById('imagen').src =  respuesta.message;
 		        })
 	        }
@@ -14,16 +16,17 @@
 	</head>
 
 	<body>
+        <--!--> agregamos el boton, una etiqueta para mostrar el url img para mostrar lo obtenido en api </--!-->
 		<div>
 	        <button onclick="mostrarPerro()">Actualizar</button>
 	    </div>
 
-	    <div>
-	        <h3 id="direccion"></h3>
-	    </div>
+        <div>
+            <h3 id="direccion"></h3>
+        </div>
 
 	    <div>
-	        <img src="pic_trulli.jpg" id="imagen" alt="Italian Trulli">
+	        <img  id="imagen">
 	    </div>
 	    
 	</body>
